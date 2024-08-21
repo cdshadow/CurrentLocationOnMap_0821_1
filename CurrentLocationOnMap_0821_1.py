@@ -1,7 +1,8 @@
 import streamlit as st
-from geopy.geocoders import Nominatim
+import pandas as pd
+import geopandas as gpd
 import folium
-from streamlit_folium import folium_static
+from streamlit_folium import st_folium
 
 # Folium 지도 생성 함수
 def create_map():
