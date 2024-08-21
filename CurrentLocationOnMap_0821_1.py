@@ -3,16 +3,6 @@ from geopy.geocoders import Nominatim
 import folium
 from streamlit_folium import folium_static
 
-# 타이틀 설정
-st.title("현위치 지도 표시")
-
-# Geopy 초기화
-geolocator = Nominatim(user_agent="geoapiExercises")
-
-# 위치 입력 필드
-user_input = st.text_input("위치 입력", "대전")  # 기본 입력 값을 대전으로 설정
-
-
 # Folium 지도 생성 함수
 def create_map():
     # Folium 지도 설정 (대전광역시 중심)
