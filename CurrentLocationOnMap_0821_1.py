@@ -1,14 +1,17 @@
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
-from geopy.geocoders import Nominatim
+from geopy.geocoders import GoogleV3
+
+# Google Geocoding API 키 설정
+api_key = "AIzaSyCW-4kxARbJUxL3jmOz5dR5D-AabKhDJdc"  # 여기에 당신의 Google API 키를 입력하세요.
 
 # 사용자 위치 입력
 st.sidebar.title("현위치 입력")
 location_input = st.sidebar.text_input("위치 입력 (예: 서울, 대전, New York)", "대전")
 
 # Geopy를 사용하여 입력된 위치의 좌표를 가져오기
-geolocator = Nominatim(user_agent="geoapiExercises")
+geolocator = GoogleV3(api_key=api_key)
 location = geolocator.geocode(location_input)
 
 # Folium 지도 생성 (입력된 위치를 중심으로 설정)
